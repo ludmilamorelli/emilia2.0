@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+  <%- include('./partials/head') %> 
+
+
+  <body class="music">
+    <%- include('./partials/header') %> 
+
+    <main>
+      <h1>music //</h1>
+      <p>Direct links</p>
+      <ul>
+        <li><a href="#album">Album</a></li>
+        <li><a href="#organic">Video: Organic Love</a></li>
+        <li><a href="#street">Video: Street Light</a></li>
+      </ul>
+      <section>
+        <article id="album">
+          <h3>album <br> TWIST IN MY REALITY</h3>
+          <img src="/images/emilia-play-list.png" alt="play-list" />
+          <ol>
+            <li><a href=""><i class="fas fa-play"></i>
+            </a> Organic Love | 02:40</li>
+            <li><a href=""><i class="fas fa-play"></i>
+            </a> Twist In My Reality | 02:10</li>
+            <li><a href=""><i class="fas fa-play"></i>
+            </a> Street Light | 03:28</li>
+            <li><a href=""><i class="fas fa-play"></i>
+            </a> Love Don’t Live Here Anymore (Cover) | 03:49</li>
+          </ol>
+          <a class="go" href="#">Go Top</a>
+        </article>
+
+        <% videos.forEach(video => { %>
+          <article id="<%= video.ancla %>" >
+            <h3>video <br><%= video.title %></h3>
+            <iframe src="<%= video.link %>"  frameborder="0"></iframe>
+            <p>Directed by <%= video.director %></p>
+            <p>Edited and Filmed by <%= video.editor %></p>
+            <p>Produced by <%= video.producer %></p>
+            <a class="go" href="#">Go Top</a>
+        </article>
+        <% }) %>
+
+      </section>
+    </main>
+  </body>
+</html>
